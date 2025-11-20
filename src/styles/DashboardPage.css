@@ -1,0 +1,286 @@
+/* .low-stock td {
+  color: #d9534f;
+  font-weight: 600;
+}
+
+.alert {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.ok {
+  color: #28a745;
+  font-weight: bold;
+} */
+
+.dashboard-summary {
+  padding: 50px 20px;
+  background: #f4f7fb;
+  text-align: center;
+}
+
+.dashboard-summary h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.summary-card p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* --- Color Variations --- */
+.total-items p {
+  color: #007bff;
+}
+
+.total-stock p {
+  color: #28a745;
+}
+
+.low-stock p {
+  color: #dc3545;
+}
+
+.total-value p {
+  color: #ffc107;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .dashboard-summary h2 {
+    font-size: 1.6rem;
+  }
+  .summary-card p {
+    font-size: 1.4rem;
+  }
+} */
+
+.dashboard-page {
+  padding: 40px 20px;
+  background: #f4f7fb;
+}
+
+.dashboard-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.summary-card p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+/* --- Charts Section --- */
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.chart-container {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* --- Sales Analytics --- */
+.sales-analytics {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sales-analytics h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.sales-summary {
+  text-align: center;
+  margin-top: 20px;
+  background: #f4f7fb;
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.sales-summary h4 {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.sales-summary p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* --- Add Sale Form --- */
+.add-sale-form {
+  margin-top: 30px;
+  background: #f8f9fb;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.add-sale-form h4 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.add-sale-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-sale-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.add-sale-form select,
+.add-sale-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.add-sale-form button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-sale-form button:hover {
+  background: #218838;
+}
+
+
+/* --- Insights Section --- */
+.insights-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.insights-section h3 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.insights-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.insights-table th,
+.insights-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.insights-table th {
+  color: #555;
+}
+
+.insights-table tr:hover {
+  background: #f9fafc;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clickable:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
