@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './contexts/ThemeContext'
-import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import DashboardPage from './pages/DashboardPage'
 import DrugCheckPage from './pages/DrugAuthenticationPage'
@@ -12,6 +11,7 @@ import './styles/App.css'
 import SignUpPage from './pages/SignUpPage';
 import "./utilities/drugDatabase";
 import DrugDatabasePage from './pages/DrugDatabasePage'
+import "./styles/theme.css";
 
 function App() {
 
@@ -44,7 +44,6 @@ function App() {
         <div className="app-container">
           <Sidebar />
           <div className="main-content">
-            {/* <Navbar /> */}
             <Routes>
               <Route path="/" element={<HomePage/>} />
               <Route path="/dashboard" element={<DashboardPage />} />

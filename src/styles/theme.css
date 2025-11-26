@@ -1,0 +1,51 @@
+ :root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f3f3f3;
+}
+
+[data-theme="dark"] {
+  --bg-color: #181818;
+  --text-color: #eeeeee;
+  --card-bg: #242424;
+}
+
+/* Global applies to all pages */
+ body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s ease;
+}
+
+/* Light Mode */
+body.light {
+  background: #f7f7f7;
+  color: #1a1a1a;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #e6e6e6;
+}
+
+/* Navbar */
+.navbar.light {
+  background: #ffffff;
+  color: #222;
+}
+
+.navbar.dark {
+  background: #1b1b1b;
+  color: #eee;
+}
+
+.theme-btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #888;
+  border-radius: 6px;
+  color: inherit;
+}
+

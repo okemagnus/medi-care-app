@@ -167,3 +167,106 @@ h1 {
   border-radius: 6px;
   font-size: 1rem;
 }
+
+/* ========================= DARK MODE ========================= */
+
+.inventory-page.dark {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+}
+
+.inventory-page.dark h2 {
+  color: #ffffff;
+}
+
+/* --- Summary Section --- */
+.inventory-page.dark .summary-card {
+  background: #1b1b1b;
+  border: 1px solid #333;
+}
+
+.inventory-page.dark .summary-card h3 {
+  color: #cccccc;
+}
+
+.inventory-page.dark .summary-card p {
+  color: #4da3ff; /* blue accent stays consistent */
+}
+
+/* --- Form --- */
+.inventory-page.dark .inventory-form {
+  background: #1b1b1b;
+  border: 1px solid #333;
+}
+
+.inventory-page.dark .inventory-form input {
+  background: #222;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+.inventory-page.dark .inventory-form button {
+  background: #4da3ff;
+  color: #fff;
+}
+
+.inventory-page.dark .inventory-form button:hover {
+  background: #1e7ed6;
+}
+
+/* --- Search Bar --- */
+.inventory-page.dark .inventory-search input {
+  background: #222;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+/* --- Table --- */
+.inventory-page.dark .inventory-table {
+  background: #1b1b1b;
+  border: 1px solid #333;
+}
+
+.inventory-page.dark .inventory-table th {
+  background: #222;
+  color: #f1f1f1;
+  border-bottom: 1px solid #333;
+}
+
+.inventory-page.dark .inventory-table td {
+  color: #e6e6e6;
+  border-bottom: 1px solid #333;
+}
+
+.inventory-page.dark .inventory-table tr.low-stock {
+  background: #2a1a1a;
+}
+
+/* --- Status Badges --- */
+.inventory-page.dark .status.low {
+  background: #4b1f1f;
+  color: #ff6b6b;
+}
+
+.inventory-page.dark .status.ok {
+  background: #1f3d1f;
+  color: #4ddf6a;
+}
+
+/* --- Buttons --- */
+.inventory-page.dark .inventory-table button {
+  background: #4da3ff;
+  color: white;
+}
+
+.inventory-page.dark .inventory-table .edit-btn {
+  background-color: #ffb347;
+}
+
+.inventory-page.dark .inventory-table .delete-btn {
+  background: #d9534f;
+}
+
+.inventory-page.dark .inventory-table .delete-btn:hover {
+  background: #b42f2a;
+}

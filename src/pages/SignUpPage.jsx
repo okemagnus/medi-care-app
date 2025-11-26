@@ -1,11 +1,12 @@
-// src/pages/SignUpPage.jsx
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Auth.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function SignUpPage() {
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className="auth-container">
+    <div className={`auth-container ${theme}`}>
       <div className="auth-card">
         <h2>Create Account</h2>
         <form>

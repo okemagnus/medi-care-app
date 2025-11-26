@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/DrugDatabase.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const DrugDatabasePage = () => {
+  const { theme } = useContext(ThemeContext)
   const [drugs, setDrugs] = useState([]);
   const [form, setForm] = useState({
     drugId: "",
@@ -83,7 +85,7 @@ const DrugDatabasePage = () => {
   };
 
   return (
-    <div className="drug-database container">
+    <div className={`drug-database container ${theme}`}>
       <h2>Drug Database Manager</h2>
 
       {/* FORM */}

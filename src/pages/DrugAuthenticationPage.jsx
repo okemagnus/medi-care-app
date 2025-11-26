@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/DrugAuthenticationPage.css";
+import { ThemeContext } from "../contexts/ThemeContext";
+
 
 const DrugAuthenticationPage = () => {
+
+  const { theme } = useContext(ThemeContext);
+
   const [formData, setFormData] = useState({
     drugId: "",
     batch: "",
@@ -60,7 +65,7 @@ const DrugAuthenticationPage = () => {
   };
 
   return (
-    <div className="auth-page">
+    <div className={`auth-page ${theme}`}>
       <h2>🔍 Drug Authentication</h2>
 
       <form className="auth-form" onSubmit={authenticate}>

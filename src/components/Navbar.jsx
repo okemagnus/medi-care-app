@@ -8,17 +8,19 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${theme}`}>
-      <h1 className="logo">MediCare</h1>
+      <h1 className="logo">Medinventory</h1>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><Link to="/login">Sign Up / Login</Link></li>
+        <li>
+          <button className="theme-btn" onClick={toggleTheme}>
+            {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+          </button>
+        </li>
       </ul>
-      <button className="theme-btn" onClick={toggleTheme}>
-        {theme === "light" ? "🌙 Dark" : "☀️ Light"}
-      </button>
     </nav>
   );
 }

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, LineChart, Line
 } from "recharts";
 import { useNavigate } from "react-router-dom";
 import "../styles/DashboardPage.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const DashboardPage = () => {
+  const { theme } = useContext(ThemeContext)
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
@@ -76,7 +78,7 @@ const DashboardPage = () => {
 
 
   return (
-    <div className="dashboard-page">
+    <div className={`dashboard-page ${theme}`}>
       <h2>📊 Dashboard Analytics</h2>
 
       <div className="stock-alerts">

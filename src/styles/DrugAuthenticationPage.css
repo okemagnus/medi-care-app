@@ -164,9 +164,77 @@ button:hover {
   }
 }
 
+.auth-page.light { background: #fff; }
+.auth-page.dark { background: #222; }
+
 /* MOBILE */
 @media (max-width: 500px) {
   .auth-page {
     margin: 20px;
   }
+}
+
+/* =====================================================
+   DARK MODE STYLING
+   Applies when ThemeContext adds: class="auth-page dark"
+===================================================== */
+
+.auth-page.dark {
+  background: #121212; 
+  color: #f1f1f1;
+}
+
+/* FORM CARD */
+.auth-page.dark .auth-form {
+  background: rgba(30, 30, 30, 0.85);
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.6);
+  border: 1px solid #2c2c2c;
+}
+
+.auth-page.dark .auth-form input {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #eaeaea;
+}
+
+.auth-page.dark .auth-form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0px 0px 6px rgba(74,144,226,0.4);
+}
+
+/* BUTTON */
+.auth-page.dark .auth-form button {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.auth-page.dark .auth-form button:hover {
+  background: #3578c9;
+}
+
+/* RESULT BOXES */
+.auth-page.dark .result-box {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* SUCCESS */
+.auth-page.dark .result-box.success {
+  background: rgba(33, 120, 70, 0.25);
+  border-left: 6px solid #1aa85a;
+  color: #7bffb1;
+}
+
+/* WARNING */
+.auth-page.dark .result-box.warning {
+  background: rgba(255, 200, 0, 0.15);
+  border-left: 6px solid #ffcc00;
+  color: #ffe58a;
+}
+
+/* DANGER */
+.auth-page.dark .result-box.danger {
+  background: rgba(255, 70, 70, 0.15);
+  border-left: 6px solid #ff4f4f;
+  color: #ff9a9a;
 }

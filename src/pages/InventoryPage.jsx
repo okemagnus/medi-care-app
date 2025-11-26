@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import "./../styles/InventoryPage.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function InventoryPage() {
+  const { theme } = useContext(ThemeContext)
   // ✅ Initialize from localStorage with lazy initializer
   const location = useLocation();
   const filterType = location.state?.filter || null;
@@ -86,7 +88,7 @@ function InventoryPage() {
   };
 
   return (
-    <div className="inventory-page">
+    <div className={`inventory-page ${theme}`}>
       <h1 className="inventory-title">Inventory Management</h1>
       <h2 className="inventory-title">
         {lowStockCount > 0 && (

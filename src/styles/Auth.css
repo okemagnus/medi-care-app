@@ -1,9 +1,12 @@
+.auth-page.light { background: linear-gradient(135deg, #007bff, #00d4ff); }
+.auth-page.dark { background: #222; }
+
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #007bff, #00d4ff);
+  /* background: linear-gradient(135deg, #007bff, #00d4ff); */
   font-family: "Poppins", sans-serif;
 }
 
@@ -57,6 +60,92 @@
 
 .auth-switch a {
   color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* FULL PAGE WRAPPER */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #0a0f24, #12223b); */
+  font-family: "Poppins", sans-serif;
+  color: #eaeaea;
+}
+
+/* CARD */
+.auth-card {
+  background: #1e1e1e;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid #2a2a2a;
+}
+
+/* TITLE */
+.auth-card h2 {
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* FORM */
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS */
+.auth-card input {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #121212;
+  color: #f1f1f1;
+  transition: 0.3s;
+}
+
+.auth-card input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+  outline: none;
+}
+
+/* BUTTON */
+.auth-card button {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-card button:hover {
+  background: #3578c9;
+}
+
+/* SWITCH TEXT */
+.auth-switch {
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+/* LINK */
+.auth-switch a {
+  color: #4a90e2;
   text-decoration: none;
   font-weight: 500;
 }

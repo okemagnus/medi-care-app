@@ -1,8 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
       
       function Contact () {
+        const { theme } = useContext(ThemeContext);
           return(
-              <section id="contact" className="contact-section">
+              <section id="contact" className={`contact-section ${theme}`}>
         <h2>Contact Us</h2>
         <p>Have questions or want to collaborate? Reach out to us below.</p>
 

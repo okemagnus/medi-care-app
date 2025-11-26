@@ -1,19 +1,25 @@
-import React from 'react'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom'
+import { ThemeContext } from '../contexts/ThemeContext';
+import "../styles/Sidebar.css"
 
-const Sidebar = () => (
-  <aside className="sidebar">
-    {/* <h2>Medicare</h2> */}
-    <ul>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/dashboard">Dashboard</Link></li>
-      <li><Link to="/inventory">Inventory</Link></li>
-      <li><Link to="/drug-check">Drug Check</Link></li>
-      <li><Link to="/database">Database</Link></li>
-      <li><Link to="/login">Login</Link></li>
-    </ul>
-  </aside>
-)
+const Sidebar = () => {
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <aside className={`sidebar ${theme}`}>
+      {/* <h2>Medicare</h2> */}
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/inventory">Inventory</Link></li>
+        <li><Link to="/drug-check">Drug Check</Link></li>
+        <li><Link to="/database">Database</Link></li>
+        <li><Link to="/login">Login</Link></li>
+      </ul>
+    </aside>
+);
+};
 
 export default Sidebar
 

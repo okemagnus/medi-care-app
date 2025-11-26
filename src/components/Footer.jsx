@@ -4,7 +4,7 @@ function Footer () {
     return(
     <div>
         <footer className="footer">
-        <p>© {new Date().getFullYear()} MediCare HealthTech. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} MedInventory HealthTech. All rights reserved.</p>
       </footer>
     </div>
     )

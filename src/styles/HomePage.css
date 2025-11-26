@@ -1,3 +1,6 @@
+.home-wrapper.light { background: #fff; }
+.home-wrapper.dark { background: #181818; }
+
 .home-wrapper {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -37,8 +40,8 @@
 }
 
 .primary-btn {
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: transparent;
+  color: var(--accent-color);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -48,6 +51,7 @@
 
 .primary-btn:hover {
   background-color: #005fcc;
+  color: #fff;
 }
 
 .secondary-btn {
@@ -61,7 +65,7 @@
 }
 
 .secondary-btn:hover {
-  background-color: var(--accent-color);
+  background-color: #005fcc;
   color: #fff;
 }
 
@@ -77,6 +81,59 @@
   max-width: 500px;
 }
 
+/* ---------------- HOME SECTION (THEME STYLES) ---------------- */
+
+/* Light Theme */
+.home-container.light {
+  background: #ffffff;
+  color: #222;
+}
+
+.home-container.light .hero-content p {
+  color: #444;
+}
+
+/* Dark Theme */
+.home-container.dark {
+  background: #0f0f0f;
+  color: #f1f1f1;
+}
+
+.home-container.dark .hero-content h1 {
+  color: #ffffff;
+}
+
+.home-container.dark .hero-content p {
+  color: #cccccc; /* Softer gray for readability */
+}
+
+/* Buttons in Dark Mode */
+.home-container.dark .primary-btn {
+  color: var(--accent-color);
+  background: transparent;
+}
+
+.home-container.dark .primary-btn:hover {
+  background: #005fcc;
+  color: #fff;
+}
+
+.home-container.dark .secondary-btn {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.home-container.dark .secondary-btn:hover {
+  background: #005fcc;
+  color: #fff;
+}
+
+/* Ensure hero image stays visible in dark mode */
+.home-container.dark .hero-image img {
+  filter: brightness(0.95);
+}
+
+
 /* ---------------- ABOUT SECTION ---------------- */
 .about-section {
   padding: 4rem 6rem;
@@ -85,8 +142,12 @@
 }
 
 .about-section h2 {
-  font-size: 2rem;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: larger;
 }
 
 /* ---------------- SERVICES SECTION ---------------- */
@@ -140,7 +201,49 @@
 
 .contact-form button {
   align-self: center;
+  background: #007bff;
+  color: #fff;
 }
+
+.contact-form button:hover {
+  background: #005ec4;
+}
+
+/* ---------------- CONTACT SECTION (DARK MODE) ---------------- */
+
+.contact-section.dark {
+  background-color: #111;
+}
+
+.contact-section.dark .section-title {
+  color: #f1f1f1;
+}
+
+/* Form fields */
+.contact-section.dark .contact-form input,
+.contact-section.dark .contact-form textarea {
+  background: #1c1c1c;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.contact-section.dark .contact-form input::placeholder,
+.contact-section.dark .contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* Submit button */
+.contact-section.dark .contact-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.contact-section.dark .contact-form button:hover {
+  background: #005ec4;
+}
+
 
 /* ---------------- FOOTER ---------------- */
 .footer {

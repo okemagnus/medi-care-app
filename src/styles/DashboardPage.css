@@ -284,3 +284,140 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
+/* ========================= DARK THEME ========================= */
+
+.dashboard-page.dark {
+  background: #0e0e0e;
+  color: #f1f1f1;
+}
+
+.dashboard-page.dark h2 {
+  color: #ffffff;
+}
+
+/* --- Summary Cards --- */
+.dashboard-page.dark .summary-card {
+  background: #1a1a1a;
+  color: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-page.dark .summary-card:hover {
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.08);
+}
+
+.dashboard-page.dark .summary-card h3 {
+  color: #cccccc;
+}
+
+.dashboard-page.dark .summary-card p {
+  color: #4da3ff; /* Blue accent still stands out */
+}
+
+/* Color variations in dark mode */
+.dashboard-page.dark .total-items p {
+  color: #4da3ff;
+}
+
+.dashboard-page.dark .total-stock p {
+  color: #33d06f;
+}
+
+.dashboard-page.dark .low-stock p {
+  color: #ff5c5c;
+}
+
+.dashboard-page.dark .total-value p {
+  color: #ffdd57;
+}
+
+/* --- Charts Section --- */
+.dashboard-page.dark .chart-container {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-page.dark .chart-container h3 {
+  color: #ffffff;
+}
+
+/* --- Sales Analytics --- */
+.dashboard-page.dark .sales-analytics {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-page.dark .sales-analytics h3 {
+  color: #ffffff;
+}
+
+.dashboard-page.dark .sales-summary {
+  background: #121212;
+  color: #ffffff;
+}
+
+.dashboard-page.dark .sales-summary h4 {
+  color: #cccccc;
+}
+
+.dashboard-page.dark .sales-summary p {
+  color: #33d06f;
+}
+
+/* --- Add Sale Form --- */
+.dashboard-page.dark .add-sale-form {
+  background: #161616;
+  color: #e8e8e8;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-page.dark .add-sale-form h4 {
+  color: #ffffff;
+}
+
+.dashboard-page.dark .add-sale-form label {
+  color: #cccccc;
+}
+
+.dashboard-page.dark .add-sale-form select,
+.dashboard-page.dark .add-sale-form input {
+  background: #222;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+.dashboard-page.dark .add-sale-form button {
+  background: #33d06f;
+}
+
+.dashboard-page.dark .add-sale-form button:hover {
+  background: #28a45a;
+}
+
+/* --- Insights Section --- */
+.dashboard-page.dark .insights-section {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  color: #e8e8e8;
+}
+
+.dashboard-page.dark .insights-section h3 {
+  color: #ffffff;
+}
+
+.dashboard-page.dark .insights-table th {
+  color: #cccccc;
+}
+
+.dashboard-page.dark .insights-table td {
+  color: #e8e8e8;
+}
+
+.dashboard-page.dark .insights-table tr:hover {
+  background: #242424;
+}
+
+/* clickable rows */
+.dashboard-page.dark .clickable:hover {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}

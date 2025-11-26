@@ -1,5 +1,6 @@
-import React from "react";
+import { useContext } from "react";
 import "../styles/HomePage.css";
+import { ThemeContext } from "../contexts/ThemeContext";
 // import heroImage from "../assets/heroImage.png"; // optional image
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero"
@@ -9,8 +10,9 @@ import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 
 function HomePage() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="home-wrapper">
+    <div className={`home-wrapper ${theme}`}>
         <Navbar />
         <Hero />
         <About />

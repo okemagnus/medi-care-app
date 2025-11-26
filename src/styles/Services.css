@@ -1,3 +1,6 @@
+.services-section.light { background: #f9fafc; }
+.services-section.dark { background: #181818; }
+
 .services-section {
   background-color: #f9fafc;
   padding: 80px 20px;
@@ -10,7 +13,7 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   color: #222;
   margin-bottom: 50px;
   font-weight: 700;
@@ -72,6 +75,50 @@
   font-size: 0.95rem;
   line-height: 1.6;
 }
+
+/* === DARK MODE STYLING === */
+
+/* Section title */
+.services-section.dark .section-title {
+  color: #f1f1f1;
+}
+
+/* Service grid background remains transparent—only cards change */
+.services-section.dark .service-card {
+  background: #242424;
+  color: #ddd;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.services-section.dark .service-card:hover {
+  border-color: #4da3ff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* Icon color adjustments */
+.services-section.dark .icon {
+  color: #4da3ff;
+}
+
+.services-section.dark .service-card:hover .icon {
+  color: #73baff;
+}
+
+/* Card heading text */
+.services-section.dark .service-card h3 {
+  color: #f5f5f5;
+}
+
+.services-section.dark .service-card:hover h3 {
+  color: #4da3ff;
+}
+
+/* Card paragraph */
+.services-section.dark .service-card p {
+  color: #ccc;
+}
+
 
 /* --- Responsive Tweaks --- */
 @media (max-width: 768px) {
