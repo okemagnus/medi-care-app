@@ -119,6 +119,26 @@
   color: #ccc;
 }
 
+.service-card-link {
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit text color */
+}
+
+.service-card-link:hover .service-card {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card {
+  background: #fff;
+  padding: 25px 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
 
 /* --- Responsive Tweaks --- */
 @media (max-width: 768px) {

@@ -150,6 +150,50 @@
   font-size: larger;
 }
 
+/* .about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+} */
+
+
 /* ---------------- SERVICES SECTION ---------------- */
 .services-section {
   padding: 4rem 6rem;
@@ -244,14 +288,102 @@
   background: #005ec4;
 }
 
+.submitted-message-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e3f6e5;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+}
+
+.submitted-message-box h3 {
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+.submitted-message-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e3f6e5;
+  border-left: 5px solid #2e7d32;
+  border-radius: 8px;
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.submitted-message-box.fade-out {
+  opacity: 0;
+}
+
+
 
 /* ---------------- FOOTER ---------------- */
+
+
+/* --- Base Footer Styles --- */
 .footer {
+  padding: 30px 10%;
   text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  background-color: var(--footer-bg);
+  transition: 0.3s;
 }
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* Light Theme */
+.footer.light {
+  background-color: #1a3c6e; /* your existing light background */
+  color: #fff;
+}
+
+.footer.light .social-icons a {
+  color: #fff;
+}
+
+.footer.light .social-icons a:hover {
+  color: #ffc107;
+}
+
+/* Dark Theme */
+.footer.dark {
+  background-color: #222; /* dark background */
+  color: #f1f1f1;
+}
+
+.footer.dark .social-icons a {
+  color: #f1f1f1;
+}
+
+.footer.dark .social-icons a:hover {
+  color: #28a745; /* optional: accent color for hover in dark mode */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+  }
+}
+
+
 
 /* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 900px) {

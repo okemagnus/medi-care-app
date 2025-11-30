@@ -1,16 +1,19 @@
-import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { ThemeProvider } from './contexts/ThemeContext'
-import Sidebar from './components/Sidebar'
-import DashboardPage from './pages/DashboardPage'
-import DrugCheckPage from './pages/DrugAuthenticationPage'
-import InventoryPage from './pages/InventoryPage'
-import LoginPage from './pages/LoginPage'
-import HomePage from './pages/HomePage'
-import './styles/App.css'
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Sidebar from './components/Sidebar';
+import PrivateRoute from './components/PrivateRoute';
+import { AuthProvider } from './contexts/AuthContext';
+import DashboardPage from './pages/DashboardPage';
+import DrugCheckPage from './pages/DrugAuthenticationPage';
+import InventoryPage from './pages/InventoryPage';
+import LoginPage from './pages/LoginPage';
+import HomePage from './pages/HomePage';
+import AlertsPage from './pages/AlertsPage';
+import './styles/App.css';
 import SignUpPage from './pages/SignUpPage';
 import "./utilities/drugDatabase";
-import DrugDatabasePage from './pages/DrugDatabasePage'
+import DrugDatabasePage from './pages/DrugDatabasePage';
 import "./styles/theme.css";
 
 function App() {
@@ -44,15 +47,60 @@ function App() {
         <div className="app-container">
           <Sidebar />
           <div className="main-content">
-            <Routes>
-              <Route path="/" element={<HomePage/>} />
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/drug-check" element={<DrugCheckPage />} />
-              <Route path="/inventory" element={<InventoryPage />} />
-              <Route path="/database" element={<DrugDatabasePage />}/>
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignUpPage />} />
-            </Routes>
+            <AuthProvider>
+              <Routes>
+                {/* Public pages */}
+                <Route path="/" element={<HomePage/>} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignUpPage />} />
+
+                {/* Protected pages */}
+                <Route  
+                path="/dashboard"
+                element={
+                  <PrivateRoute>
+                    <DashboardPage />
+                  </PrivateRoute>
+                  } 
+                /> 
+
+                <Route
+                 path="/drug-check"
+                 element={
+                  <PrivateRoute>
+                    <DrugCheckPage />
+                  </PrivateRoute>
+                 }
+               />
+
+                <Route
+                 path="/inventory" 
+                 element={
+                  <PrivateRoute>
+                    <InventoryPage />
+                  </PrivateRoute>
+                 } 
+                />
+
+                <Route 
+                  path="/database" 
+                  element={
+                    <PrivateRoute>
+                      <DrugDatabasePage />
+                    </PrivateRoute>
+                  }
+                />
+
+                <Route
+                 path="/alerts" 
+                 element={
+                  <PrivateRoute>
+                    <AlertsPage />
+                  </PrivateRoute>
+                 } 
+                />
+              </Routes>
+            </AuthProvider>
           </div>
         </div>
       </Router>
@@ -61,36 +109,3 @@ function App() {
 }
 
 export default App
-
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// import { ThemeProvider } from "./contexts/ThemeContext";
-
-// import HomePage from "./pages/HomePage";
-// // import AboutPage from "./pages/AboutPage";
-// import ServicesPage from "./pages/ServicesPage";
-// import ContactPage from "./pages/ContactPage";
-// import AuthPage from "./pages/AuthPage";
-
-// import "./styles/App.css";
-
-// function App() {
-//   return (
-//     <ThemeProvider>
-//       <Router>
-//         <Navbar />
-//         <Routes>
-//           <Route path="/" element={<HomePage />} />
-//           {/* <Route path="/about" element={<AboutPage />} /> */}
-//           <Route path="/services" element={<ServicesPage />} />
-//           <Route path="/contact" element={<ContactPage />} />
-//           <Route path="/auth" element={<AuthPage />} />
-//         </Routes>
-//       </Router>
-//     </ThemeProvider>
-//   );
-// }
-
-// export default App;
-
