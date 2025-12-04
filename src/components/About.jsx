@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImage from "../assets/AboutImage.png";
+import aboutImage from "../assets/aboutImage.png";
 
 function About () {
     return(
@@ -14,7 +14,7 @@ function About () {
         </div>
 
         <div>
-          <img src={AboutImage} alt="Dashboard Illustrtion" />
+          <img src={aboutImage} alt="Dashboard Illustrtion" />
         </div>
       </section>
 
