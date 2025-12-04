@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Sidebar from './components/Sidebar';
@@ -15,8 +15,11 @@ import SignUpPage from './pages/SignUpPage';
 import "./utilities/drugDatabase";
 import DrugDatabasePage from './pages/DrugDatabasePage';
 import "./styles/theme.css";
+import { auth } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
   const sampleDrugs = [
@@ -41,13 +44,22 @@ function App() {
   }
 }, []);
 
+  //check authentication state
+  useEffect (() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <ThemeProvider>
-      <Router>
-        <div className="app-container">
-          <Sidebar />
-          <div className="main-content">
-            <AuthProvider>
+      <AuthProvider>
+        <Router>
+          <div className={`app-container ${user ? 'with-sidebar' : 'no-sidebar'}`}>
+            {user && <Sidebar />}
+            <div className="main-content">
               <Routes>
                 {/* Public pages */}
                 <Route path="/" element={<HomePage/>} />
@@ -65,21 +77,21 @@ function App() {
                 /> 
 
                 <Route
-                 path="/drug-check"
-                 element={
+                path="/drug-check"
+                element={
                   <PrivateRoute>
                     <DrugCheckPage />
                   </PrivateRoute>
-                 }
-               />
+                }
+              />
 
                 <Route
-                 path="/inventory" 
-                 element={
+                path="/inventory" 
+                element={
                   <PrivateRoute>
                     <InventoryPage />
                   </PrivateRoute>
-                 } 
+                } 
                 />
 
                 <Route 
@@ -92,18 +104,19 @@ function App() {
                 />
 
                 <Route
-                 path="/alerts" 
-                 element={
+                path="/alerts" 
+                element={
                   <PrivateRoute>
                     <AlertsPage />
                   </PrivateRoute>
-                 } 
+                } 
                 />
               </Routes>
-            </AuthProvider>
+              
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </AuthProvider>
     </ThemeProvider>
   )
 }

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import "../styles/HomePage.css";
 import { ThemeContext } from "../contexts/ThemeContext";
-// import heroImage from "../assets/heroImage.png"; // optional image
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero"
 import About from "../components/About"
