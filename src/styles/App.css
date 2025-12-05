@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
@@ -6,6 +6,7 @@ body {
 .app-container {
   display: flex;
   min-height: 100vh;
+  transition: margin-left 0.3s ease;
 }
 
 .sidebar { 
@@ -38,24 +39,18 @@ body {
   padding: 2;
 }
 
-/* .app-container {
-  display: flex;
-  min-height: 100vh;
-  transition: margin-left 0.3s ease;
-}
-
 /* When sidebar is visible */
-/* .app-container.with-sidebar .main-content {
+ /* .app-container.with-sidebar .main-content {
   margin-left: 220px;
   transition: margin-left 0.3s ease;
-}
+} */
 
 /* When sidebar is hidden */
-/*.app-container.no-sidebar .main-content {
+/* .app-container.no-sidebar .main-content {
   margin-left: 0;
   width: 100%;
   transition: margin-left 0.3s ease;
-} */
+}
 
 .main-content {
   flex: 1;
@@ -86,4 +81,99 @@ body {
 .theme-light {
   background-color: #f8f9fa;
   color: black;
+} */
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
 }
+
+/* Layout Wrapper */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ===================== SIDEBAR ===================== */
+
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background-color: #1a3c6e;
+  color: white;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+/* Sidebar Links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 0;
+  transition: opacity 0.2s;
+}
+
+.sidebar ul li a:hover {
+  opacity: 0.7;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* When user is logged in (sidebar shown) */
+.app-container.with-sidebar .main-content {
+  margin-left: 220px;
+}
+
+/* When logged out (sidebar hidden) */
+.app-container.no-sidebar .main-content {
+  margin-left: 0;
+}
+
+/* ===================== NAVBAR (Landing Page) ===================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Theme Button */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid #1a3c6e;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===================== THEMES ===================== */
+
+.theme-dark {
+  background-color: #121212;
+  color: white;
+}
+
+.theme-light {
+  background-color: #f8f9fa;
+  color: #222;
+}
+
