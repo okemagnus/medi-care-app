@@ -11,6 +11,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation(); // Get current route
   const [unreadCount, setUnreadCount] = useState(0);
+  const [isOpen, setIsOpen] = useState(false); // <-- added
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -47,29 +48,38 @@ const Sidebar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <aside className={`sidebar ${theme}`}>
-      <ul>
-        <li className={isActive("/") ? "active" : ""}><Link to="/">Home</Link></li>
-        <li className={isActive("/dashboard") ? "active" : ""}><Link to="/dashboard">Dashboard</Link></li>
-        <li className={isActive("/inventory") ? "active" : ""}><Link to="/inventory">Inventory</Link></li>
-        <li className={isActive("/drug-check") ? "active" : ""}><Link to="/drug-check">Drug Check</Link></li>
-        <li className={isActive("/database") ? "active" : ""}><Link to="/database">Database</Link></li>
-        
-        <li className={isActive("/alerts") ? "active" : ""}>
-          <Link to="/alerts">
-            Notifications
-            {unreadCount > 0 && (
-              <span className="alert-badge">{unreadCount}</span>
-            )}
-          </Link></li>
+    <div>
+      {/* Mobile toggle */}
+      <button className="sidebar-toggle" onClick={() => setIsOpen(!isOpen)}>
+        ☰
+      </button>
+      
+      <aside className={`sidebar ${theme} ${isOpen ? "open" : ""}`}>
 
-        {user ? (
-          <li className={isActive("/logout") ? "active" : ""}><button className="logout-btn" onClick={handleLogout}>Logout</button></li>
-        ) : (
-          <li className={isActive("/login") ? "active" : ""}><Link to="/login">Login</Link></li>
-        )}
-      </ul>
-    </aside>
+        <div className="sidebar-header" />
+          <ul>
+          <li className={isActive("/") ? "active" : ""}><Link to="/">Home</Link></li>
+          <li className={isActive("/dashboard") ? "active" : ""}><Link to="/dashboard">Dashboard</Link></li>
+          <li className={isActive("/inventory") ? "active" : ""}><Link to="/inventory">Inventory</Link></li>
+          <li className={isActive("/drug-check") ? "active" : ""}><Link to="/drug-check">Drug Check</Link></li>
+          <li className={isActive("/database") ? "active" : ""}><Link to="/database">Database</Link></li>
+          
+          <li className={isActive("/alerts") ? "active" : ""}>
+            <Link to="/alerts">
+              Notifications
+              {unreadCount > 0 && (
+                <span className="alert-badge">{unreadCount}</span>
+              )}
+            </Link></li>
+
+          {user ? (
+            <li className={isActive("/logout") ? "active" : ""}><button className="logout-btn" onClick={handleLogout}>Logout</button></li>
+          ) : (
+            <li className={isActive("/login") ? "active" : ""}><Link to="/login">Login</Link></li>
+          )}
+        </ul>
+      </aside>
+    </div>
   );
 };
 

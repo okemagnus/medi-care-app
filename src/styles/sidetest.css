@@ -4,50 +4,43 @@
 .sidebar {
   width: 220px;
   height: 100vh;
+  padding: 20px;
   position: fixed;
   top: 0;
-  left: 0;
-  padding: 20px;
+  left: -220px;
+  transform: translateX(0);
+  transition: 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
   background-color: #1a3c6e;
   color: #fff;
-  transition: transform 0.3s ease;
-  z-index: 1500;
-  overflow-y: auto;
+  padding: 20px;
 }
 
-/* Themes */
+/* Light / Dark theme */
 .sidebar.light { background: #1a3c6e; color: #fff; }
-.sidebar.dark  { background: #222; color: #f1f1f1; }
-
-.sidebar-header {
-  height: 56px;          /* same height as toggle area */
-}
-
+.sidebar.dark { background: #222; color: #f1f1f1; }
 
 /* List */
 .sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 60px 0 0 0; /* space for toggle button */
 }
-
 .sidebar li {
   margin: 15px 0;
   font-size: 18px;
 }
-
 .sidebar a,
 .sidebar .logout-btn {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
   font-size: 18px;
+  transition: 0.2s;
   background: none;
   border: none;
-  transition: 0.2s;
   padding: 0;
 }
-
 .sidebar a:hover,
 .sidebar .logout-btn:hover {
   opacity: 0.6;
@@ -59,7 +52,6 @@
   position: relative;
   color: #007bff;
 }
-
 .sidebar li.active a::before {
   content: "";
   position: absolute;
@@ -89,12 +81,12 @@
 .sidebar-toggle {
   display: none;
   position: fixed;
-  top: 16px;
-  left: 16px;
+  top: 15px;
+  left: 15px;
   z-index: 2000;
-  font-size: 26px;
+  font-size: 28px;
   background: #1a3c6e;
-  color: #fff;
+  color: white;
   border: none;
   padding: 10px 14px;
   border-radius: 6px;
@@ -104,13 +96,16 @@
 /* ===========================
    RESPONSIVE
 =========================== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
+    width: 220px;
+    padding: 20px;
   }
 
   .sidebar.open {
     transform: translateX(0);
+
   }
 
   .sidebar-toggle {
@@ -118,7 +113,7 @@
   }
 }
 
-/* Small screens */
+/* Extra small screens */
 @media (max-width: 500px) {
   .sidebar li {
     font-size: 16px;

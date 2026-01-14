@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ToastContainer } from './components/Toast';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Sidebar from './components/Sidebar';
@@ -114,6 +115,7 @@ function App() {
               </Routes>
               
             </div>
+            <ToastContainer />
           </div>
         </Router>
       </AuthProvider>

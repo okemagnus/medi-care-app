@@ -407,3 +407,187 @@
     align-items: center;
   }
 }
+
+/* ===========================
+   GLOBAL MOBILE RESPONSIVENESS
+=========================== */
+
+@media (max-width: 1100px) {
+  .home-container,
+  .about-section,
+  .services-section,
+  .contact-section {
+    padding: 3rem 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /* ---------- HERO SECTION ---------- */
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 75%;
+    max-width: 420px;
+  }
+
+  /* ---------- ABOUT SECTION ---------- */
+  .about-section {
+    padding: 3rem 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-section p {
+    font-size: 1.05rem;
+  }
+
+  /* ---------- SERVICES SECTION ---------- */
+  .services-section {
+    padding: 3rem 2rem;
+  }
+
+  .service-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  /* ---------- CONTACT SECTION ---------- */
+  .contact-section {
+    padding: 3rem 2rem;
+  }
+
+  .contact-form {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* HERO */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* ABOUT */
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  /* CONTACT */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  /* FOOTER */
+  .footer-content {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* HERO */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  /* SERVICES */
+  .service-card {
+    width: 100%;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 25px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* HERO */
+  .home-container {
+    padding: 1.8rem 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* ABOUT */
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  /* SERVICES */
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form {
+    gap: 0.8rem;
+  }
+
+  /* FOOTER */
+  .social-icons a {
+    font-size: 16px;
+  }
+}
