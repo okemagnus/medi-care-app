@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
 import heroImage from "../assets/heroImage.png";
+import { showToast } from "./Toast";
 
 function Hero() {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, setUser);
+    return unsub;
+  }, []);
 
   const handleGetStarted = () => {
-    navigate("/login"); // change to "/signup" if needed
+    if (user) {
+      navigate("/dashboard");
+    } else {
+      showToast("Please log in to access the dashboard");
+    navigate("/login");
+    }
   };
 
   const handleLearnMore = () => {
@@ -21,12 +35,15 @@ function Hero() {
       <div className="hero-content">
         <h1>Revolutionizing Healthcare Inventory in Nigeria</h1>
         <p>
-          MedInventory is a smart digital platform that helps hospitals, pharmacies, and clinics in Africa manage inventory and supplies effortlessly. Track stock in real-time, get instant alerts, and keep essential medicines available—all in one easy-to-use system.
+          MedInventory is a smart digital platform that helps hospitals,
+          pharmacies, and clinics in Africa manage inventory and supplies
+          effortlessly. Track stock in real-time, get instant alerts, and keep
+          essential medicines available—all in one easy-to-use system.
         </p>
 
         <div className="hero-buttons">
           <button className="primary-btn" onClick={handleGetStarted}>
-            Get Started
+            {user ? "Go to Dashboard" : "Get Started"}
           </button>
 
           <button className="secondary-btn" onClick={handleLearnMore}>
@@ -43,3 +60,4 @@ function Hero() {
 }
 
 export default Hero;
+
